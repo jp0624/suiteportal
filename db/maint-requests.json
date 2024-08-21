@@ -1,0 +1,59 @@
+{
+  "requests": [
+    {
+      "id": "1tZpJOO-XK",
+      "name": "John Doe",
+      "email": "john@doe.com",
+      "unitNumber": "110",
+      "serviceType": "electrical",
+      "summary": "I need my electrical fixed in my kitchen",
+      "details": "It hasn't been working for 3 weeks!",
+      "submittedAt": "2024-08-21T15:05:02.608Z",
+      "status": "open"
+    },
+    {
+      "id": "tyMZqX13GY",
+      "name": "Billy Bob",
+      "email": "billy@bob.com",
+      "unitNumber": "123",
+      "serviceType": "general",
+      "summary": "I need to install a lightbulb",
+      "details": "I'm too short to reach",
+      "submittedAt": "2024-08-21T15:23:27.726Z",
+      "status": "open"
+    },
+    {
+      "id": "na3tbYPtfB",
+      "name": "Wayne Gretz",
+      "email": "wayne@g.com",
+      "unitNumber": "99",
+      "serviceType": "pest-control",
+      "summary": "Roaches everywhere!",
+      "details": "Help!",
+      "status": "open",
+      "submittedAt": "2024-08-21T15:58:36.999Z"
+    },
+    {
+      "id": "CpKdsItAcR",
+      "name": "Billy Joe",
+      "email": "Joe@billy.com",
+      "unitNumber": "456",
+      "serviceType": "general",
+      "summary": "I need my carpets cleaned!",
+      "details": "Please help!",
+      "status": "open",
+      "submittedAt": "2024-08-21T16:16:15.231Z"
+    },
+    {
+      "id": "_oKGV9HAoW",
+      "name": "Sarah Storey",
+      "email": "sarah@hotmail.com",
+      "unitNumber": "1234",
+      "serviceType": "electrical",
+      "summary": "Washing machine electrocutes me",
+      "details": "Needs to be fixed asap!",
+      "status": "closed",
+      "submittedAt": "2024-08-21T16:19:05.714Z"
+    }
+  ]
+}

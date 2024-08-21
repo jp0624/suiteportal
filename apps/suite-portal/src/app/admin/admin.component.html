@@ -1,0 +1,115 @@
+<mat-grid-list cols="1" rowHeight="2:1">
+  <mat-grid-tile>
+    <mat-card *ngIf="this.loginStatus === 'false'">
+      <mat-card-header>
+        <mat-card-title>
+          Admin Panel Login
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form
+          class="maint-form"
+          [formGroup]="adminLoginForm"
+          (ngSubmit)="adminLogin()"
+        >
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="username" />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" />
+          </mat-form-field>
+
+          <button mat-raised-button color="accent">
+            Login
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-card *ngIf="this.loginStatus === 'true'">
+    <mat-card-header>
+      <mat-card-title>Maintenance Requests (open)</mat-card-title>
+      <button mat-raised-button color="accent" (click)="adminLogout()">
+        Logout
+      </button>
+    </mat-card-header>
+
+    <mat-card-content>
+      <ul>
+        <li class="heading">
+          <p>Unit</p>
+          <p>Name</p>
+          <p>Email</p>
+          <p>Summary</p>
+          <p>Details</p>
+          <p>Action</p>
+        </li>
+        <ng-container *ngFor="let request of maintenanceRequests">
+          <em *ngIf="request.status === 'open'">{{
+            request.submittedAt | date: 'yyyy-MM-dd hh:mm a'
+          }}</em>
+          <li *ngIf="request.status === 'open'" class="requests-open">
+            <p>#{{ request.unitNumber }}</p>
+            <p class="name">{{ request.name }}</p>
+            <p>{{ request.email }}</p>
+            <p>{{ request.summary }}</p>
+            <p>{{ request.details }}</p>
+            <p>
+              <button
+                (click)="closeRequest(request.id)"
+                mat-raised-button
+                color="warn"
+              >
+                Close
+              </button>
+            </p>
+          </li></ng-container
+        >
+      </ul>
+    </mat-card-content>
+    <mat-card-header>
+      <mat-card-title>Maintenance Requests (closed)</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <ul>
+        <li class="heading">
+          <p>Unit</p>
+          <p class="name">Name</p>
+          <p>Email</p>
+          <p>Summary</p>
+          <p>Details</p>
+          <p>Action</p>
+        </li>
+        <ng-container *ngFor="let request of maintenanceRequests">
+          <li *ngIf="request.status === 'closed'" class="requests-closed">
+            <p>#{{ request.unitNumber }}</p>
+            <p>{{ request.name }}</p>
+            <p>{{ request.email }}</p>
+            <p>{{ request.summary }}</p>
+            <p>{{ request.details }}</p>
+            <p class="btns">
+              <button
+                (click)="openRequest(request.id)"
+                mat-raised-button
+                color="primary"
+              >
+                Re-Open
+              </button>
+              <button
+                (click)="deleteRequest(request.id)"
+                mat-raised-button
+                color="warn"
+              >
+                Delete
+              </button>
+            </p>
+          </li></ng-container
+        >
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</mat-grid-list>
