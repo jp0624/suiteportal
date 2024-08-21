@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ALL_SERVICE_TYPES } from '@suiteportal/api-interfaces';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'pm-home',
@@ -17,7 +18,7 @@ export class AdminComponent implements OnInit {
   });
   adminCredentials = {
     username: 'admin',
-    password: 'admin',
+    password: environment.adminPassword,
   };
   maintenanceRequests: any = [];
   loginStatus = localStorage.getItem('login') || 'false';
