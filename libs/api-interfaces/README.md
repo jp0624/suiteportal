@@ -1,7 +1,5 @@
-# api-interfaces
+# Shared API Interfaces
 
-This library was generated with [Nx](https://nx.dev).
+TypeScript interfaces shared by the Angular portal and NestJS API. Import them through `@suiteportal/api-interfaces` so both applications use the same contracts.
 
-## Running unit tests
-
-Run `nx test api-interfaces` to execute the unit tests via [Jest](https://jestjs.io).
+Run `npx nx test api-interfaces` from the workspace root to run this library’s Jest tests.

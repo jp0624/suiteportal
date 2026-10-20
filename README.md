@@ -1,6 +1,6 @@
-# SuitePortal
+# Suiteportal
 
-This repository is intended to be a starter project for your assignment.
+An Angular maintenance-request portal with a NestJS API in an Nx workspace.
 
 Please review `./Requirements.md` for more detailed instructions about this assignment.
 
@@ -9,7 +9,7 @@ Please review `./Requirements.md` for more detailed instructions about this assi
 
 You can build the project using the [Nx](https://nx.dev/) command line tools
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+ Nx runs the applications and shared-library tasks from the workspace root.
 
 Using:
 
@@ -108,4 +108,3 @@ Libraries are sharable across libraries and applications. They can be imported f
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
